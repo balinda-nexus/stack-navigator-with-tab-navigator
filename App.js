@@ -5,8 +5,8 @@ import {
   Text,
   View,StatusBar,TouchableOpacity,ScrollView,Navigator,Dimensions,
 } from 'react-native';
-import {StackNavigator} from 'react-navigation';
-import {TabNavigator} from 'react-navigation';
+import {StackNavigator} from 'react-navigation'; //import the stack navigator
+import {TabNavigator} from 'react-navigation'; // import the tabnavigator
 import Style from "./src/stylesFile";
 
 
@@ -20,21 +20,18 @@ import CameraView from './src/pages/CameraView';
 import Viewer from './src/pages/Viewer'
 import Choice from './src/Choice'
 
-
+/// import the  react tabs from a directory of your choice
 import Tab1 from './src/Tabs/Tab1';
 import Tab2 from './src/Tabs/Tab2';
 import Tab3 from './src/Tabs/Tab3';
 import Tab4 from './src/Tabs/Tab4';
 
+//initialise the Tabnavigator first
 
 const Tabs = TabNavigator({
  Tab1: { screen: Tab1 },
  Tab2: { screen: Tab2 },
  Tab3: { screen: Tab3 },
-
-
-
-
 },
 {tabBarPosition : 'top',
 swipeEnabled : true,
@@ -63,7 +60,7 @@ indicatorStyle:{
 const Navigation = StackNavigator({
   Zero : {screen: Choice},
   First : {screen :Login},
-  Tabs: { screen: Tabs },
+  Tabs: { screen: Tabs }, ///////// call tabnavigator as a screen in the stacknavigator
   Second : {screen :Home},
   Third : {screen : ViewDetails},
 
